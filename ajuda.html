@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetShop Patinhas - Ajuda</title>
+    <meta name="description" content="Página de ajuda explicando as funcionalidades do site do PetShop Patinhas.">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+
+<a class="visually-hidden-focusable" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+<header>
+    <div class="faixa-institucional py-1 text-center">
+        <small>
+            Rua das Flores, 123 - Centro - Aceguá/RS &nbsp;|&nbsp;
+            Telefone: (53) 99999-0000 &nbsp;|&nbsp;
+            Horário: Seg. a Sáb., das 8h às 18h
+        </small>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-petshop py-3" role="navigation" aria-label="Menu principal">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">🐾 PetShop Patinhas</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                    aria-expanded="false" aria-label="Abrir/fechar menu de navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#produtos">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="agendamento.html">Cadastro e Agendamento</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="ajuda.html">Ajuda</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<main id="conteudo-principal" class="container my-5">
+
+    <h1 class="mb-4">Ajuda - Como usar o site do PetShop Patinhas</h1>
+
+    <section class="mb-5">
+        <h2 class="h4">O que é este site?</h2>
+        <p>
+            Este é o site institucional do <strong>PetShop Patinhas</strong>, petshop fictício desenvolvido como
+            projeto acadêmico da disciplina de Fundamentos de Sistemas Web. Aqui você encontra os produtos
+            e serviços oferecidos, além de poder se cadastrar e agendar um banho ou tosa para o seu pet.
+        </p>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="h4">Como navegar pelo site</h2>
+        <ul>
+            <li>Use o menu no topo da página para ir até <strong>Início</strong>, <strong>Produtos</strong>, <strong>Serviços</strong>, <strong>Cadastro e Agendamento</strong> ou esta página de <strong>Ajuda</strong>.</li>
+            <li>Em telas pequenas (celular), toque no ícone de três linhas no canto superior direito para abrir o menu.</li>
+            <li>Na página inicial, um botão flutuante <strong>"↑ Topo"</strong> aparece no canto inferior direito depois que você rola a página, permitindo voltar ao início rapidamente.</li>
+        </ul>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="h4">Página Início (index.html)</h2>
+        <ul>
+            <li><strong>Carrossel de promoções:</strong> banners que trocam automaticamente, com setas e bolinhas para navegar manualmente.</li>
+            <li><strong>Produtos:</strong> dois produtos de cada uma das três categorias (Ração; Higiene e Beleza; Acessórios), com foto, descrição e valor.</li>
+            <li><strong>Serviços:</strong> descrição, valor e indicação de tele-busca dos serviços de banho e tosa.</li>
+        </ul>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="h4">Página Cadastro e Agendamento (agendamento.html)</h2>
+        <p>Esta página contém um formulário dividido em três partes:</p>
+        <ol>
+            <li><strong>Dados do cliente:</strong> nome, e-mail, CPF, telefone, endereço, sexo e preferências de contato.</li>
+            <li><strong>Dados do pet:</strong> nome, raça, idade, espécie e observações.</li>
+            <li><strong>Serviço e agendamento:</strong> escolha entre Banho ou Tosa, escolha entre tele-busca ou entrega no local, e selecione a data e o horário desejados em um calendário.</li>
+        </ol>
+        <p>
+            Conforme você preenche o serviço, a forma de atendimento, a data e o horário, um <strong>resumo do agendamento</strong>
+            é atualizado automaticamente na tela. Ao clicar em "Confirmar Cadastro e Agendamento", o site verifica se todos
+            os campos obrigatórios (marcados com <span class="campo-obrigatorio">*</span>) foram preenchidos corretamente
+            e exibe uma mensagem de confirmação.
+        </p>
+        <div class="alert alert-warning">
+            <strong>Importante:</strong> este projeto é apenas um exercício acadêmico de front-end. Os dados do formulário
+            não são enviados a nenhum servidor nem armazenados de fato — a confirmação é simulada localmente, no navegador, com JavaScript.
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="h4">Recursos de acessibilidade</h2>
+        <ul>
+            <li>Todas as imagens possuem o atributo <code>alt</code> com uma descrição detalhada (audiodescrição), permitindo que leitores de tela expliquem o conteúdo de cada imagem.</li>
+            <li>Link "Pular para o conteúdo principal", visível ao navegar com a tecla Tab, que permite ignorar o menu de navegação repetitivo.</li>
+            <li>Contraste de cores ajustado entre texto e fundo, seguindo a paleta da marca.</li>
+            <li>Contorno bem visível ao redor do elemento em foco, para quem navega só com o teclado.</li>
+            <li>Uso de marcação semântica (<code>header</code>, <code>main</code>, <code>footer</code>, <code>fieldset</code>, <code>legend</code>) e de atributos ARIA (<code>aria-label</code>, <code>aria-live</code>, <code>aria-current</code>) que ajudam leitores de tela a entender a estrutura da página.</li>
+        </ul>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="h4">Estrutura de arquivos do projeto</h2>
+        <pre class="bg-white border rounded p-3"><code>petshop-patinhas/
+├── index.html            → página inicial (carrossel, produtos, serviços)
+├── agendamento.html      → formulário de cadastro do cliente/pet e agendamento
+├── ajuda.html            → esta página de ajuda
+├── README.md             → documento do projeto (Fase 1 e Fase 2)
+├── HELP.md               → arquivo de ajuda em texto simples
+├── css/
+│   └── estilos.css       → estilos personalizados (cores, tipografia, cartões)
+├── js/
+│   └── script.js         → relógio, validação do formulário, resumo do agendamento, botão "Topo"
+└── images/               → banners do carrossel e imagens dos produtos</code></pre>
+    </section>
+
+</main>
+
+
+<footer class="rodape-petshop py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4 mb-3">
+                <h5>PetShop Patinhas</h5>
+                <p class="mb-1">Cuidando do seu melhor amigo com amor e dedicação desde 2024.</p>
+                <p class="mb-0">&copy; 2026 PetShop Patinhas. Todos os direitos reservados.</p>
+            </div>
+
+            <div class="col-12 col-md-4 mb-3">
+                <h5>Contato</h5>
+                <p class="mb-1">Rua das Flores, 123 - Centro - Aceguá/RS</p>
+                <p class="mb-1">Telefone: (53) 99999-0000</p>
+                <p class="mb-1">E-mail: contato@petshoppatinhas.com.br</p>
+            </div>
+
+            <div class="col-12 col-md-4 mb-3">
+                <h5>Navegação</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#produtos">Produtos</a></li>
+                    <li><a href="index.html#servicos">Serviços</a></li>
+                    <li><a href="agendamento.html">Cadastro e Agendamento</a></li>
+                    <li><a href="ajuda.html">Ajuda / Sobre o site</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-light">
+
+        <p class="text-center mb-0">
+            Autoria: [Seu Nome Completo] - Projeto acadêmico, Fase 2. &nbsp;|&nbsp;
+            Data e hora atual: <span id="relogioAtual" aria-live="polite">--/--/---- --:--:--</span>
+        </p>
+    </div>
+</footer>
+
+<button id="botaoVoltarTopo" class="btn btn-petshop position-fixed bottom-0 end-0 m-4"
+        style="display:none; z-index:1000;" aria-label="Voltar ao topo da página">
+    ↑ Topo
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

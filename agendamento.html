@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetShop Patinhas - Cadastro e Agendamento</title>
+    <meta name="description" content="Cadastre-se e agende um banho ou tosa para o seu pet, com tele-busca ou entrega no local.">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+
+<a class="visually-hidden-focusable" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+<!-- ======================================================================
+     CABEÇALHO (HEADER) - igual ao da página inicial, para manter
+     consistência de navegação em todas as páginas do site.
+     ====================================================================== -->
+<header>
+    <div class="faixa-institucional py-1 text-center">
+        <small>
+            Rua das Flores, 123 - Centro - Aceguá/RS &nbsp;|&nbsp;
+            Telefone: (53) 99999-0000 &nbsp;|&nbsp;
+            Horário: Seg. a Sáb., das 8h às 18h
+        </small>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-petshop py-3" role="navigation" aria-label="Menu principal">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">🐾 PetShop Patinhas</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                    aria-expanded="false" aria-label="Abrir/fechar menu de navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#produtos">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="agendamento.html">Cadastro e Agendamento</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<!-- ======================================================================
+     CONTEÚDO PRINCIPAL
+     ====================================================================== -->
+<main id="conteudo-principal" class="container my-5">
+
+    <h1 class="text-center mb-2">Cadastro e Agendamento</h1>
+    <p class="text-center text-muted mb-5">
+        Preencha seus dados, os dados do seu pet e escolha o serviço, a forma de atendimento e o horário desejado.
+        Campos marcados com <span class="campo-obrigatorio">*</span> são obrigatórios.
+    </p>
+
+    <form id="formularioCadastro" class="cartao-formulario" novalidate>
+
+        <!-- ==================================================================
+             BLOCO 1: DADOS DO CLIENTE
+             ================================================================== -->
+        <fieldset class="mb-4">
+            <legend class="h4 mb-3">1. Dados do Cliente</legend>
+
+            <div class="row g-3">
+
+                <!-- Campo de texto simples, obrigatório -->
+                <div class="col-12 col-md-6">
+                    <label for="nomeCliente" class="form-label">Nome completo <span class="campo-obrigatorio">*</span></label>
+                    <input type="text" class="form-control" id="nomeCliente" name="nomeCliente"
+                           placeholder="Ex.: Maria da Silva" required>
+                </div>
+
+                <!-- Campo type="email", com validação automática de formato -->
+                <div class="col-12 col-md-6">
+                    <label for="emailCliente" class="form-label">E-mail <span class="campo-obrigatorio">*</span></label>
+                    <input type="email" class="form-control" id="emailCliente" name="emailCliente"
+                           placeholder="nome@exemplo.com" required>
+                </div>
+
+                <!-- Campo com "pattern": exige exatamente 11 dígitos numéricos (CPF sem pontuação) -->
+                <div class="col-12 col-md-6">
+                    <label for="cpfCliente" class="form-label">CPF <span class="campo-obrigatorio">*</span></label>
+                    <input type="text" class="form-control" id="cpfCliente" name="cpfCliente"
+                           placeholder="Somente números, ex.: 12345678900"
+                           pattern="[0-9]{11}" maxlength="11" inputmode="numeric"
+                           title="Digite os 11 números do CPF, sem pontos ou traço" required>
+                    <div class="form-text">Digite apenas os 11 números, sem pontos ou traço.</div>
+                </div>
+
+                <!-- Campo de telefone com type="tel" -->
+                <div class="col-12 col-md-6">
+                    <label for="telefoneCliente" class="form-label">Telefone / WhatsApp <span class="campo-obrigatorio">*</span></label>
+                    <input type="tel" class="form-control" id="telefoneCliente" name="telefoneCliente"
+                           placeholder="(53) 99999-0000" required>
+                </div>
+
+                <!-- Campo de endereço, ocupando a linha inteira -->
+                <div class="col-12">
+                    <label for="enderecoCliente" class="form-label">Endereço completo <span class="campo-obrigatorio">*</span></label>
+                    <input type="text" class="form-control" id="enderecoCliente" name="enderecoCliente"
+                           placeholder="Rua, número, bairro, cidade" required>
+                </div>
+
+                <!-- Sexo: grupo de radio buttons -->
+                <div class="col-12 col-md-6">
+                    <span class="form-label d-block">Sexo</span>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sexoCliente" id="sexoFeminino" value="Feminino">
+                        <label class="form-check-label" for="sexoFeminino">Feminino</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sexoCliente" id="sexoMasculino" value="Masculino">
+                        <label class="form-check-label" for="sexoMasculino">Masculino</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sexoCliente" id="sexoNaoInformar" value="Prefiro não informar" checked>
+                        <label class="form-check-label" for="sexoNaoInformar">Prefiro não informar</label>
+                    </div>
+                </div>
+
+                <!-- Checkbox de aceite de comunicação (campo opcional) -->
+                <div class="col-12 col-md-6">
+                    <span class="form-label d-block">Preferências de contato</span>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="aceitaWhatsapp" name="aceitaWhatsapp" value="sim">
+                        <label class="form-check-label" for="aceitaWhatsapp">Aceito receber avisos por WhatsApp</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="aceitaEmailPromo" name="aceitaEmailPromo" value="sim">
+                        <label class="form-check-label" for="aceitaEmailPromo">Aceito receber promoções por e-mail</label>
+                    </div>
+                </div>
+
+            </div>
+        </fieldset>
+
+        <hr>
+
+        <!-- ==================================================================
+             BLOCO 2: DADOS DO PET
+             ================================================================== -->
+        <fieldset class="mb-4">
+            <legend class="h4 mb-3">2. Dados do Pet</legend>
+
+            <div class="row g-3">
+
+                <div class="col-12 col-md-4">
+                    <label for="nomePet" class="form-label">Nome do pet <span class="campo-obrigatorio">*</span></label>
+                    <input type="text" class="form-control" id="nomePet" name="nomePet"
+                           placeholder="Ex.: Rex" required>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <label for="racaPet" class="form-label">Raça <span class="campo-obrigatorio">*</span></label>
+                    <input type="text" class="form-control" id="racaPet" name="racaPet"
+                           placeholder="Ex.: Labrador, Vira-lata..." required>
+                </div>
+
+                <!-- Campo type="number", com valor mínimo e máximo definidos -->
+                <div class="col-12 col-md-4">
+                    <label for="idadePet" class="form-label">Idade (em anos) <span class="campo-obrigatorio">*</span></label>
+                    <input type="number" class="form-control" id="idadePet" name="idadePet"
+                           min="0" max="30" step="1" placeholder="Ex.: 3" required>
+                </div>
+
+                <!-- Espécie: outro grupo de radio buttons -->
+                <div class="col-12 col-md-6">
+                    <span class="form-label d-block">Espécie <span class="campo-obrigatorio">*</span></span>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="especiePet" id="especieCao" value="Cão" required>
+                        <label class="form-check-label" for="especieCao">Cão</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="especiePet" id="especieGato" value="Gato">
+                        <label class="form-check-label" for="especieGato">Gato</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="especiePet" id="especieOutro" value="Outro">
+                        <label class="form-check-label" for="especieOutro">Outro</label>
+                    </div>
+                </div>
+
+                <!-- Observações: campo de texto longo (opcional) -->
+                <div class="col-12 col-md-6">
+                    <label for="observacoesPet" class="form-label">Observações sobre o pet (opcional)</label>
+                    <input type="text" class="form-control" id="observacoesPet" name="observacoesPet"
+                           placeholder="Ex.: alergias, comportamento, cuidados especiais">
+                </div>
+
+            </div>
+        </fieldset>
+
+        <hr>
+
+        <!-- ==================================================================
+             BLOCO 3: ESCOLHA DO SERVIÇO E AGENDAMENTO
+             ================================================================== -->
+        <fieldset class="mb-4" id="formularioAgendamento">
+            <legend class="h4 mb-3">3. Escolha do Serviço e Agendamento</legend>
+
+            <div class="row g-3">
+
+                <!-- Serviço: radio buttons -->
+                <div class="col-12 col-md-6">
+                    <span class="form-label d-block">Serviço desejado <span class="campo-obrigatorio">*</span></span>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="servico" id="servicoBanho" value="Banho Completo" required>
+                        <label class="form-check-label" for="servicoBanho">Banho Completo (R$ 60,00)</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="servico" id="servicoTosa" value="Tosa Higiênica e Completa">
+                        <label class="form-check-label" for="servicoTosa">Tosa Higiênica e Completa (R$ 80,00)</label>
+                    </div>
+                </div>
+
+                <!-- Forma de atendimento: radio buttons -->
+                <div class="col-12 col-md-6">
+                    <span class="form-label d-block">Forma de atendimento <span class="campo-obrigatorio">*</span></span>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="formaAtendimento" id="formaTelebusca" value="tele-busca (buscamos seu pet em casa)" required>
+                        <label class="form-check-label" for="formaTelebusca">Tele-busca (buscamos o pet em casa)</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="formaAtendimento" id="formaLocal" value="entrega no local pelo cliente">
+                        <label class="form-check-label" for="formaLocal">Entrega do pet no local pelo cliente</label>
+                    </div>
+                </div>
+
+                <!-- Calendário: input type="date", com data mínima definida via JavaScript -->
+                <div class="col-12 col-md-6">
+                    <label for="dataAgendamento" class="form-label">Data do agendamento <span class="campo-obrigatorio">*</span></label>
+                    <input type="date" class="form-control" id="dataAgendamento" name="dataAgendamento" required>
+                    <div class="form-text">Não é possível selecionar datas anteriores ao dia de hoje.</div>
+                </div>
+
+                <!-- Horário: input type="time" -->
+                <div class="col-12 col-md-6">
+                    <label for="horaAgendamento" class="form-label">Horário desejado <span class="campo-obrigatorio">*</span></label>
+                    <input type="time" class="form-control" id="horaAgendamento" name="horaAgendamento"
+                           min="08:00" max="18:00" required>
+                    <div class="form-text">Atendimento de segunda a sábado, das 8h às 18h.</div>
+                </div>
+
+                <!-- Resumo dinâmico, preenchido e atualizado via JavaScript -->
+                <div class="col-12">
+                    <div class="alert alert-light border" id="resumoAgendamento" role="status" aria-live="polite">
+                        Selecione o serviço, a forma de atendimento, a data e o horário para visualizar o resumo do seu agendamento.
+                    </div>
+                </div>
+
+            </div>
+        </fieldset>
+
+        <!-- Botão de envio do formulário -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-petshop btn-lg">Confirmar Cadastro e Agendamento</button>
+        </div>
+
+        <!-- Mensagem de confirmação, exibida via JavaScript após o envio
+             (fica escondida por padrão; ver regra #mensagemConfirmacao no CSS) -->
+        <div class="alert alert-success mt-4" id="mensagemConfirmacao" role="alert"></div>
+
+    </form>
+
+</main>
+
+
+<!-- ======================================================================
+     RODAPÉ (FOOTER)
+     ====================================================================== -->
+<footer class="rodape-petshop py-4 mt-5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 col-md-4 mb-3">
+                <h5>PetShop Patinhas</h5>
+                <p class="mb-1">Cuidando do seu melhor amigo com amor e dedicação desde 2024.</p>
+                <p class="mb-0">&copy; 2026 PetShop Patinhas. Todos os direitos reservados.</p>
+            </div>
+
+            <div class="col-12 col-md-4 mb-3">
+                <h5>Contato</h5>
+                <p class="mb-1">Rua das Flores, 123 - Centro - Aceguá/RS</p>
+                <p class="mb-1">Telefone: (53) 99999-0000</p>
+                <p class="mb-1">E-mail: contato@petshoppatinhas.com.br</p>
+            </div>
+
+            <div class="col-12 col-md-4 mb-3">
+                <h5>Navegação</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#produtos">Produtos</a></li>
+                    <li><a href="index.html#servicos">Serviços</a></li>
+                    <li><a href="agendamento.html">Cadastro e Agendamento</a></li>
+                    <li><a href="ajuda.html">Ajuda / Sobre o site</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-light">
+
+        <p class="text-center mb-0">
+            Autoria: [Seu Nome Completo] - Projeto acadêmico, Fase 2. &nbsp;|&nbsp;
+            Data e hora atual: <span id="relogioAtual" aria-live="polite">--/--/---- --:--:--</span>
+        </p>
+    </div>
+</footer>
+
+<button id="botaoVoltarTopo" class="btn btn-petshop position-fixed bottom-0 end-0 m-4"
+        style="display:none; z-index:1000;" aria-label="Voltar ao topo da página">
+    ↑ Topo
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

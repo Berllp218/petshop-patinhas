@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetShop Patinhas - Início</title>
+
+    <!-- Descrição da página para mecanismos de busca e leitores de tela -->
+    <meta name="description" content="PetShop Patinhas: produtos de ração, higiene e acessórios, além de serviços de banho e tosa para o seu pet.">
+
+    <!-- Bootstrap 5 (CSS) via CDN: framework responsável pelo grid, pelo
+         carrossel e pelos componentes visuais prontos (cartões, botões). -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Nosso CSS personalizado, carregado DEPOIS do Bootstrap para que
+         nossas regras tenham prioridade e sobrescrevam o necessário. -->
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ======================================================================
+     LINK DE ACESSIBILIDADE "PULAR PARA O CONTEÚDO"
+     Permite que usuários de teclado/leitores de tela saltem direto para o
+     conteúdo principal, sem precisar passar por todos os links do menu.
+     ====================================================================== -->
+<a class="visually-hidden-focusable" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+<!-- ======================================================================
+     CABEÇALHO (HEADER)
+     ====================================================================== -->
+<header>
+
+    <!-- Faixa superior com informações institucionais do petshop -->
+    <div class="faixa-institucional py-1 text-center">
+        <small>
+            Rua das Flores, 123 - Centro - Aceguá/RS &nbsp;|&nbsp;
+            Telefone: (53) 99999-0000 &nbsp;|&nbsp;
+            Horário: Seg. a Sáb., das 8h às 18h
+        </small>
+    </div>
+
+    <!-- Menu de navegação principal, construído com o componente Navbar do
+         Bootstrap. role="navigation" e aria-label reforçam a acessibilidade,
+         identificando para leitores de tela qual é a função deste bloco. -->
+    <nav class="navbar navbar-expand-lg navbar-petshop py-3" role="navigation" aria-label="Menu principal">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">🐾 PetShop Patinhas</a>
+
+            <!-- Botão "sanduíche" que aparece em telas pequenas (celular) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                    aria-expanded="false" aria-label="Abrir/fechar menu de navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#conteudo-principal">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#produtos">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="agendamento.html">Cadastro e Agendamento</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<!-- ======================================================================
+     CONTEÚDO PRINCIPAL (BODY)
+     ====================================================================== -->
+<main id="conteudo-principal">
+
+    <!-- ==================================================================
+         CARROSSEL DE PROMOÇÕES (Bootstrap Carousel)
+         Componente dinâmico exigido pela Fase 2: alterna automaticamente
+         entre banners promocionais, com setas de navegação e indicadores.
+         ================================================================== -->
+    <div id="carrosselPromocoes" class="carousel slide" data-bs-ride="carousel" aria-label="Carrossel de promoções do petshop">
+
+        <!-- Indicadores (bolinhas clicáveis na parte inferior do carrossel) -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carrosselPromocoes" data-bs-slide-to="0"
+                    class="active" aria-current="true" aria-label="Slide 1: Promoção de rações"></button>
+            <button type="button" data-bs-target="#carrosselPromocoes" data-bs-slide-to="1"
+                    aria-label="Slide 2: Banho e tosa com tele-busca"></button>
+            <button type="button" data-bs-target="#carrosselPromocoes" data-bs-slide-to="2"
+                    aria-label="Slide 3: Novidades para o seu pet"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <!-- alt descreve a imagem para quem usa leitor de tela (acessibilidade) -->
+                <img src="images/banner-promo-racao.svg"
+                     class="d-block w-100"
+                     alt="Banner verde com o texto: Promoção de Rações, até 20% de desconto em rações selecionadas">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Promoção de Rações</h2>
+                    <p>Até 20% de desconto em rações selecionadas. Aproveite!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/banner-banho-tosa.svg"
+                     class="d-block w-100"
+                     alt="Banner laranja com o texto: Banho e Tosa com Tele-busca, agende e não saia de casa">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Banho e Tosa com Tele-busca</h2>
+                    <p>Agende pelo nosso site e nós buscamos seu pet em casa.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/banner-novidades.svg"
+                     class="d-block w-100"
+                     alt="Banner verde-escuro com o texto: Novidades para o seu Pet, confira os novos acessórios e brinquedos">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Novidades para o seu Pet</h2>
+                    <p>Confira os novos acessórios e brinquedos que chegaram.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Setas de navegação manual (anterior/próximo) -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrosselPromocoes" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Slide anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrosselPromocoes" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo slide</span>
+        </button>
+    </div>
+
+
+    <div class="container">
+
+        <!-- ==============================================================
+             CHAMADA PARA O AGENDAMENTO
+             ============================================================== -->
+        <section class="text-center bg-white border rounded-3 p-4 my-4 shadow-sm">
+            <h2 class="h4">Quer agendar um banho ou tosa para o seu pet?</h2>
+            <p class="mb-3">Cadastre-se e escolha entre tele-busca ou entrega no local, com data e horário marcados.</p>
+            <a href="agendamento.html" class="btn btn-petshop btn-lg">Fazer Cadastro e Agendamento</a>
+        </section>
+
+        <!-- ==============================================================
+             SEÇÃO DE PRODUTOS
+             ============================================================== -->
+        <section id="produtos" class="my-5">
+            <h2 class="text-center mb-4">Nossos Produtos</h2>
+            <p class="text-center text-muted mb-5">
+                Confira dois produtos de cada uma das nossas três categorias: Ração, Higiene e Beleza, e Acessórios.
+            </p>
+
+            <!-- ---------- Categoria 1: Ração ---------- -->
+            <h3 class="mb-3"><span class="badge badge-categoria">Categoria</span> Ração</h3>
+            <div class="row g-4 mb-5">
+
+                <div class="col-12 col-md-6">
+                    <div class="card cartao-produto">
+                        <img src="images/racao-caes.svg" class="card-img-top"
+                             alt="Pacote ilustrativo de Ração Premium para Cães Adultos, embalagem de 15 quilos">
+                        <div class="card-body">
+                            <h4 class="card-title h5">Ração Premium para Cães Adultos</h4>
+                            <p class="card-text">Ração super premium para cães adultos de todas as raças, rica em proteínas, vitaminas e minerais. Embalagem de 15kg.</p>
+                            <p class="preco-produto">R$ 189,90</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="card cartao-produto">
+                        <img src="images/racao-gatos.svg" class="card-img-top"
+                             alt="Pacote ilustrativo de Ração para Gatos Castrados, embalagem de 3 quilos">
+                        <div class="card-body">
+                            <h4 class="card-title h5">Ração para Gatos Castrados</h4>
+                            <p class="card-text">Ração especial para gatos castrados, com controle de peso e fórmula que auxilia na saúde urinária. Embalagem de 3kg.</p>
+                            <p class="preco-produto">R$ 79,90</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ---------- Categoria 2: Higiene e Beleza ---------- -->
+            <h3 class="mb-3"><span class="badge badge-categoria">Categoria</span> Higiene e Beleza</h3>
+            <div class="row g-4 mb-5">
+
+                <div class="col-12 col-md-6">
+                    <div class="card cartao-produto">
+                        <img src="images/shampoo-pet.svg" class="card-img-top"
+                             alt="Frasco ilustrativo de Shampoo Neutro para Cães e Gatos, 500 mililitros">
+                        <div class="card-body">
+                            <h4 class="card-title h5">Shampoo Neutro para Cães e Gatos</h4>
+                            <p class="card-text">Shampoo neutro hipoalergênico, indicado para todas as idades, com fragrância suave e prolongada. Frasco de 500ml.</p>
+                            <p class="preco-produto">R$ 34,90</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="card cartao-produto">
+                        <img src="images/perfume-pet.svg" class="card-img-top"
+                             alt="Frasco ilustrativo de Perfume Pet Colônia, 120 mililitros">
+                        <div class="card-body">
+                            <h4 class="card-title h5">Perfume Pet Colônia</h4>
+                            <p class="card-text">Colônia desenvolvida especialmente para pets, com fragrância duradoura e fórmula que não irrita a pele. Frasco de 120ml.</p>
+                            <p class="preco-produto">R$ 24,90</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ---------- Categoria 3: Acessórios ---------- -->
+            <h3 class="mb-3"><span class="badge badge-categoria">Categoria</span> Acessórios</h3>
+            <div class="row g-4 mb-5">
+
+                <div class="col-12 col-md-6">
+                    <div class="card cartao-produto">
+                        <img src="images/coleira.svg" class="card-img-top"
+                             alt="Ilustração de Coleira Ajustável com Guia em nylon">
+                        <div class="card-body">
+                            <h4 class="card-title h5">Coleira Ajustável com Guia</h4>
+                            <p class="card-text">Conjunto de coleira ajustável e guia em nylon resistente, disponível em diversas cores. Indicado para cães de médio porte.</p>
+                            <p class="preco-produto">R$ 49,90</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="card cartao-produto">
+                        <img src="images/caminha-pet.svg" class="card-img-top"
+                             alt="Ilustração de Caminha Acolchoada para Pets, tamanho médio">
+                        <div class="card-body">
+                            <h4 class="card-title h5">Caminha Acolchoada para Pets</h4>
+                            <p class="card-text">Caminha acolchoada antialérgica, tamanho médio, ideal para cães e gatos, com tecido lavável e forro removível.</p>
+                            <p class="preco-produto">R$ 99,90</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==============================================================
+             SEÇÃO DE SERVIÇOS
+             ============================================================== -->
+        <section id="servicos" class="my-5">
+            <h2 class="text-center mb-4">Nossos Serviços</h2>
+            <p class="text-center text-muted mb-5">
+                Veja a descrição, o valor e a disponibilidade de tele-busca de cada serviço.
+                Para agendar, acesse a página de <a href="agendamento.html">Cadastro e Agendamento</a>.
+            </p>
+
+            <div class="row g-4 mb-4">
+
+                <div class="col-12 col-md-6">
+                    <div class="card cartao-servico">
+                        <div class="card-body">
+                            <h4 class="card-title h5">Banho Completo</h4>
+                            <p class="card-text">Banho com produtos hipoalergênicos, secagem, limpeza de ouvidos e corte de unhas.</p>
+                            <p class="preco-produto">R$ 60,00</p>
+                            <span class="badge badge-telebusca-sim">Com tele-busca disponível</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="card cartao-servico">
+                        <div class="card-body">
+                            <h4 class="card-title h5">Tosa Higiênica e Completa</h4>
+                            <p class="card-text">Tosa higiênica ou completa conforme a raça do pet, incluindo banho e finalização com perfume.</p>
+                            <p class="preco-produto">R$ 80,00</p>
+                            <span class="badge badge-telebusca-sim">Com tele-busca disponível</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="agendamento.html" class="btn btn-petshop-outline btn-lg" role="button">
+                    Agendar Banho ou Tosa
+                </a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+
+<!-- ======================================================================
+     RODAPÉ (FOOTER)
+     ====================================================================== -->
+<footer class="rodape-petshop py-4 mt-5" id="contato">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 col-md-4 mb-3">
+                <h5>PetShop Patinhas</h5>
+                <p class="mb-1">Cuidando do seu melhor amigo com amor e dedicação desde 2024.</p>
+                <p class="mb-0">&copy; 2026 PetShop Patinhas. Todos os direitos reservados.</p>
+            </div>
+
+            <div class="col-12 col-md-4 mb-3">
+                <h5>Contato</h5>
+                <p class="mb-1">Rua das Flores, 123 - Centro - Aceguá/RS</p>
+                <p class="mb-1">Telefone: (53) 99999-0000</p>
+                <p class="mb-1">E-mail: contato@petshoppatinhas.com.br</p>
+            </div>
+
+            <div class="col-12 col-md-4 mb-3">
+                <h5>Navegação</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="agendamento.html">Cadastro e Agendamento</a></li>
+                    <li><a href="ajuda.html">Ajuda / Sobre o site</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-light">
+
+        <!-- Relógio/data atual, atualizado em tempo real via JavaScript
+             (função temporal exigida pela Fase 2). -->
+        <p class="text-center mb-0">
+            Autoria: [Seu Nome Completo] - Projeto acadêmico, Fase 2. &nbsp;|&nbsp;
+            Data e hora atual: <span id="relogioAtual" aria-live="polite">--/--/---- --:--:--</span>
+        </p>
+    </div>
+</footer>
+
+
+<!-- Botão flutuante "Voltar ao topo" (interatividade em JavaScript) -->
+<button id="botaoVoltarTopo" class="btn btn-petshop position-fixed bottom-0 end-0 m-4"
+        style="display:none; z-index:1000;" aria-label="Voltar ao topo da página">
+    ↑ Topo
+</button>
+
+
+<!-- Bootstrap 5 (JS) via CDN: necessário para o carrossel e o menu colapsável funcionarem -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+<!-- Nosso JavaScript personalizado (relógio, botão de topo, etc.) -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

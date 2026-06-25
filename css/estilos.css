@@ -1,0 +1,235 @@
+/* ==========================================================================
+   PetShop Patinhas - estilos.css
+   Fase 2 - Fundamentos de Sistemas Web
+
+   Este arquivo contém os estilos personalizados do site, usados em conjunto
+   com o framework Bootstrap 5 (carregado via CDN no <head> de cada página).
+   O Bootstrap cuida do grid, do carrossel e dos componentes prontos (botões,
+   cartões, formulários); aqui ajustamos cores, tipografia e pequenos
+   detalhes para dar identidade visual ao petshop.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Variáveis de cor (paleta da marca)
+   Definir as cores como variáveis CSS facilita reaproveitá-las em várias
+   regras e trocar a paleta inteira alterando só este bloco.
+   -------------------------------------------------------------------------- */
+:root {
+  --cor-primaria: #3D7068;      /* verde petróleo - cor principal da marca */
+  --cor-primaria-escura: #2C534D; /* verde mais escuro, usado em hover */
+  --cor-secundaria: #D98C4A;    /* terracota - usada em destaques e botões de ação */
+  --cor-secundaria-escura: #B96F32;
+  --cor-fundo-claro: #FAF7F2;   /* fundo levemente amadeirado, mais aconchegante que branco puro */
+  --cor-texto: #2E2E2E;
+  --cor-borda: #E0DAD0;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset leve e tipografia geral
+   -------------------------------------------------------------------------- */
+body {
+  background-color: var(--cor-fundo-claro);
+  color: var(--cor-texto);
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth; /* rolagem suave ao clicar em links de âncora do menu */
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: var(--cor-primaria-escura);
+}
+
+/* Links do corpo do texto usam a cor secundária no hover, reforçando a marca */
+a {
+  color: var(--cor-primaria);
+}
+a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* --------------------------------------------------------------------------
+   3. Cabeçalho (header) e barra de navegação
+   -------------------------------------------------------------------------- */
+.navbar-petshop {
+  background-color: var(--cor-primaria);
+}
+
+.navbar-petshop .navbar-brand,
+.navbar-petshop .nav-link {
+  color: #FFFFFF !important;
+}
+
+.navbar-petshop .nav-link:hover,
+.navbar-petshop .nav-link:focus {
+  color: var(--cor-secundaria) !important;
+  text-decoration: underline;
+}
+
+/* Faixa de informações institucionais acima do menu (endereço, telefone) */
+.faixa-institucional {
+  background-color: var(--cor-primaria-escura);
+  color: #FFFFFF;
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. Carrossel (Bootstrap Carousel)
+   Apenas pequenos ajustes visuais por cima do componente padrão do Bootstrap.
+   -------------------------------------------------------------------------- */
+#carrosselPromocoes {
+  margin-bottom: 2rem;
+}
+
+#carrosselPromocoes img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover; /* garante que a imagem preencha a área sem distorcer */
+}
+
+#carrosselPromocoes .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Cartões de produtos e serviços
+   -------------------------------------------------------------------------- */
+.cartao-produto,
+.cartao-servico {
+  border: 1px solid var(--cor-borda);
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  height: 100%;
+}
+
+/* Efeito sutil ao passar o mouse, dando sensação de "interatividade" ao card */
+.cartao-produto:hover,
+.cartao-servico:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12);
+}
+
+.cartao-produto img {
+  background-color: #FFFFFF;
+  padding: 0.5rem;
+}
+
+.preco-produto {
+  color: var(--cor-secundaria-escura);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.badge-categoria {
+  background-color: var(--cor-primaria) !important;
+}
+
+.badge-telebusca-sim {
+  background-color: var(--cor-primaria) !important;
+}
+
+.badge-telebusca-nao {
+  background-color: #9A9A9A !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. Botões personalizados
+   -------------------------------------------------------------------------- */
+.btn-petshop {
+  background-color: var(--cor-secundaria);
+  border-color: var(--cor-secundaria);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.btn-petshop:hover,
+.btn-petshop:focus {
+  background-color: var(--cor-secundaria-escura);
+  border-color: var(--cor-secundaria-escura);
+  color: #FFFFFF;
+}
+
+.btn-petshop-outline {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+  font-weight: 600;
+}
+
+.btn-petshop-outline:hover {
+  background-color: var(--cor-primaria);
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   7. Formulário de cadastro e agendamento
+   -------------------------------------------------------------------------- */
+.cartao-formulario {
+  background-color: #FFFFFF;
+  border: 1px solid var(--cor-borda);
+  border-radius: 0.75rem;
+  padding: 2rem;
+}
+
+/* Destaca em vermelho o asterisco de campo obrigatório, sem depender de JS */
+.campo-obrigatorio {
+  color: #C0392B;
+  font-weight: bold;
+}
+
+/* Mensagem de confirmação exibida via JavaScript após o envio do formulário */
+#mensagemConfirmacao {
+  display: none; /* fica oculta até o JavaScript alterar para "block" */
+}
+
+/* --------------------------------------------------------------------------
+   8. Relógio / data exibidos no rodapé (função temporal em JavaScript)
+   -------------------------------------------------------------------------- */
+#relogioAtual {
+  font-weight: 600;
+  color: var(--cor-secundaria);
+}
+
+/* --------------------------------------------------------------------------
+   9. Rodapé (footer)
+   -------------------------------------------------------------------------- */
+footer.rodape-petshop {
+  background-color: var(--cor-primaria-escura);
+  color: #F1EEE8;
+}
+
+footer.rodape-petshop a {
+  color: #F1EEE8;
+}
+
+footer.rodape-petshop a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* --------------------------------------------------------------------------
+   10. Acessibilidade
+   Classe utilitária "somente leitor de tela": esconde visualmente um texto,
+   mas mantém ele disponível para leitores de tela (NVDA, JAWS, VoiceOver).
+   Usada, por exemplo, para dar contexto extra a ícones decorativos.
+   -------------------------------------------------------------------------- */
+.somente-leitor-tela {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Contorno de foco bem visível para quem navega só com o teclado (Tab) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--cor-secundaria);
+  outline-offset: 2px;
+}
