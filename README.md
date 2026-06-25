@@ -28,7 +28,7 @@ Evoluir o protótipo desenvolvido na Fase 1 (HTML puro) para um sistema web mais
 
 > **Atenção:** substitua pelo link real do seu repositório.
 
-🔗 [https://github.com/SEU-USUARIO/petshop-patinhas](https://github.com/SEU-USUARIO/petshop-patinhas)
+🔗 [https://github.com/berllp218/petshop-patinhas](https://github.com/berllp218/petshop-patinhas)
 
 ---
 
@@ -36,7 +36,7 @@ Evoluir o protótipo desenvolvido na Fase 1 (HTML puro) para um sistema web mais
 
 > **Atenção:** substitua pelo link gerado pelo GitHub Pages.
 
-🔗 [https://SEU-USUARIO.github.io/petshop-patinhas/](https://SEU-USUARIO.github.io/petshop-patinhas/)
+🔗 [https://berllp.github.io/petshop-patinhas/](https://berllp218.github.io/petshop-patinhas/)
 
 ---
 
